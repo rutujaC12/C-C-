@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The jQuery Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .button {
+            margin: 3px;
+            border: 2px solid #666;
+            height: 30px;
+            width: 100px;
+            cursor: pointer;
+        }
+        #box {
+            position: relative;
+            margin: 3px;
+            padding: 12px;
+            border: 2px solid #666;
+            height: 100px;
+            width: 180px;
+            background-color: #9c9cff;
+        }
+    </style>
+</head>
+<body>
+    <p>Click on Left or Right button to see the result:</p>
+    <button id="right" class="button" style="background-color: #fb7c7c;">Right Move</button>
+    <button id="left" class="button" style="background-color: #93ff93;">Left Move</button>
+    <div id="box">This is Box</div>
+    <script>
+        $(document).ready(function() {
+            // cached selectors for better performance
+            const $box = $("#box");
+            const $right = $("#right");
+            const $left = $("#left");
+
+            $right.click(function() {
+                $box.animate({ left: '250px' }, 1000);
+            });
+
+            $left.click(function() {
+                $box.animate({ left: '0px' }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
